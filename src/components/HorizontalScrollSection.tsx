@@ -12,31 +12,31 @@ const cards = [
         id: 1,
         title: "Pilates",
         description: "Fortalecimento consciente e reabilitação funcional.",
-        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1000&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=1200",
     },
     {
         id: 2,
         title: "Quiropraxia",
         description: "Alinhamento vertebral e saúde do sistema nervoso.",
-        image: "https://images.unsplash.com/photo-1579126038374-6064e9370f0f?q=80&w=1000&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1502139214982-d0ad755818d8?auto=format&fit=crop&q=80&w=1200",
     },
     {
         id: 3,
         title: "Ventosaterapia",
         description: "Alívio de tensões musculares e melhora da circulação.",
-        image: "https://images.unsplash.com/photo-1544367563-12123d815d19?q=80&w=1000&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1611010344440-ad067ca65609?auto=format&fit=crop&q=80&w=1200",
     },
     {
         id: 4,
         title: "Escoliose",
         description: "Tratamento específico com foco em alinhamento.",
-        image: "https://images.unsplash.com/photo-1599058917233-358043bc15ee?q=80&w=1000&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&q=80&w=1200",
     },
     {
         id: 5,
         title: "Estética",
         description: "Cuidados faciais e corporais para seu bem-estar.",
-        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=1200",
     },
 ];
 
@@ -47,16 +47,21 @@ export default function HorizontalScrollSection() {
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Horizontal Scroll
-        const totalMove = trackRef.current!.scrollWidth - window.innerWidth + 200; // adding some padding
+        if (!trackRef.current) return;
+
+        // More robust distance calculation
+        const getScrollAmount = () => {
+            const trackWidth = trackRef.current?.offsetWidth || 0;
+            return trackWidth - window.innerWidth + 100; // Adding buffer to see the full last card
+        };
 
         gsap.to(trackRef.current, {
-            x: -totalMove,
+            x: () => -getScrollAmount(),
             ease: "none",
             scrollTrigger: {
                 trigger: targetRef.current,
                 start: "top top",
-                end: () => `+=${totalMove}`,
+                end: () => `+=${getScrollAmount() * 1.5}`, // Longer scroll for smoother experience
                 scrub: 1,
                 pin: true,
                 invalidateOnRefresh: true,
@@ -80,9 +85,9 @@ export default function HorizontalScrollSection() {
 
     return (
         <section ref={targetRef} className="relative bg-white overflow-hidden">
-            <div className="flex h-screen w-full flex-col justify-center overflow-hidden pl-6 md:pl-24">
+            <div className="flex h-screen w-full flex-col justify-center overflow-hidden">
 
-                <div className="scroll-header mb-12 max-w-xl">
+                <div className="scroll-header mb-12 max-w-xl pl-6 md:pl-24">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-secondary/50 text-primary font-bold text-xs uppercase tracking-widest mb-6">
                         <span className="w-2 h-2 rounded-full bg-accent" />
                         Nossas Especialidades
@@ -92,7 +97,7 @@ export default function HorizontalScrollSection() {
                     </h2>
                 </div>
 
-                <div ref={trackRef} className="flex gap-8 w-max pr-24">
+                <div ref={trackRef} className="flex gap-8 w-max pr-24 pl-6 md:pl-24">
                     {cards.map((card) => (
                         <div
                             key={card.id}
@@ -103,6 +108,7 @@ export default function HorizontalScrollSection() {
                                 alt={card.title}
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                unoptimized
                             />
 
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
