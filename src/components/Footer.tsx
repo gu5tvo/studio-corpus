@@ -47,7 +47,7 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3 text-muted">
                                 <Phone size={18} className="text-accent" />
-                                (99) 99140-6087
+                                (99) 99141-2100
                             </li>
                             <li className="flex items-center gap-3 text-muted">
                                 <Mail size={18} className="text-accent" />

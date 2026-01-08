@@ -46,13 +46,13 @@ export default function ContatoPage() {
                             </div>
 
                             <div className="space-y-8">
-                                <a href="tel:+5599991406087" className="flex items-center gap-6 group">
+                                <a href="tel:+5599991412100" className="flex items-center gap-6 group">
                                     <div className="w-16 h-16 rounded-full bg-secondary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                                         <Phone size={24} />
                                     </div>
                                     <div>
                                         <p className="text-sm text-muted font-bold uppercase tracking-widest mb-1">Telefone / WhatsApp</p>
-                                        <p className="text-xl font-bold text-primary">(99) 99140-6087</p>
+                                        <p className="text-xl font-bold text-primary">(99) 99141-2100</p>
                                     </div>
                                 </a>
 
