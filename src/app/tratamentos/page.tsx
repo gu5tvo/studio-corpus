@@ -70,6 +70,7 @@ export default function TratamentosPage() {
                                         alt={item.title}
                                         fill
                                         className="object-cover transition-transform duration-700 hover:scale-105"
+                                        unoptimized
                                     />
                                 </div>
                                 <div className="flex-1 space-y-8">
