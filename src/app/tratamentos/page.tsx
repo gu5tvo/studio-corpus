@@ -8,28 +8,34 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const treatments = [
     {
-        title: "Fisioterapia Clínica",
-        description: "Abordagem baseada em evidências para o tratamento de dores agudas e crônicas, lesões esportivas e pós-operatórios.",
-        image: "https://images.unsplash.com/photo-1576091160550-217359f4ecf8?q=80&w=1000&auto=format&fit=crop",
-        benefits: ["Alívio imediato da dor", "Recuperação funcional", "Prevenção de recidivas"]
-    },
-    {
-        title: "Pilates Clínico",
-        description: "O método Pilates adaptado para a reabilitação, focando no controle motor, estabilidade e fortalecimento consciente.",
+        title: "Pilates",
+        description: "O método de controle muscular que une corpo e mente, focado em fortalecimento, flexibilidade e consciência corporal.",
         image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1000&auto=format&fit=crop",
-        benefits: ["Correção postural", "Fortalecimento do core", "Flexibilidade assistida"]
+        benefits: ["Fortalecimento do core", "Melhora da postura", "Flexibilidade e equilíbrio"]
     },
     {
-        title: "Osteopatia",
-        description: "Terapia manual que busca o equilíbrio do corpo através da manipulação de tecidos, articulações e órgãos.",
+        title: "Quiropraxia",
+        description: "Diagnóstico e tratamento de problemas das articulações, especialmente da coluna vertebral, através de manobras manuais precisas.",
+        image: "https://images.unsplash.com/photo-1579126038374-6064e9370f0f?q=80&w=1000&auto=format&fit=crop",
+        benefits: ["Alinhamento vertebral", "Alívio de dores nas costas", "Melhora do fluxo nervoso"]
+    },
+    {
+        title: "Ventosaterapia",
+        description: "Técnica milenar que utiliza a sucção para liberar tensões musculares profundas, melhorar a circulação e desintoxicar o organismo.",
         image: "https://images.unsplash.com/photo-1544367563-12123d815d19?q=80&w=1000&auto=format&fit=crop",
-        benefits: ["Equilíbrio sistêmico", "Liberação miofascial", "Melhora da mobilidade"]
+        benefits: ["Liberação miofascial", "Redução de inflamações", "Alívio do estresse muscular"]
     },
     {
-        title: "RPG",
-        description: "Reeducação Postural Global para tratar desvios da coluna e tensões musculares crônicas através de alongamentos dinâmicos.",
+        title: "Tratamento Específico para Escoliose",
+        description: "Protocolos especializados e exercícios focados na correção e estabilização de desvios da coluna vertebral.",
         image: "https://images.unsplash.com/photo-1599058917233-358043bc15ee?q=80&w=1000&auto=format&fit=crop",
-        benefits: ["Alinhamento vertebral", "Consciência corporal", "Redução de escolioses"]
+        benefits: ["Correção postural", "Estabilização da curva", "Diminuição das tensões assimétricas"]
+    },
+    {
+        title: "Estética Facial e Corporal",
+        description: "Procedimentos avançados para realçar sua beleza natural e promover saúde da pele e contorno corporal.",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop",
+        benefits: ["Revitalização facial", "Drenagem linfática", "Modelagem corporal"]
     }
 ];
 

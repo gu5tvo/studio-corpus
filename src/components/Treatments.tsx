@@ -6,25 +6,25 @@ import { Activity, Dumbbell, ShieldCheck, Zap } from "lucide-react";
 export default function Services() {
     const treatments = [
         {
-            title: "Alívio de Dor Lombar",
-            description: "Protocolos específicos para reduzir a inflamação e fortalecer a musculatura estabilizadora da coluna.",
-            icon: <Activity className="text-accent" size={32} />,
-            badge: "Mais Procurado"
-        },
-        {
-            title: "Reeducação Postural",
-            description: "Melhore sua postura e evite dores crônicas com técnicas avançadas de alinhamento corporal.",
-            icon: <ShieldCheck className="text-accent" size={32} />,
-        },
-        {
-            title: "Pilates Terapêutico",
-            description: "O pilates focado na reabilitação, aumentando a flexibilidade e o controle motor com segurança.",
+            title: "Pilates",
+            description: "Equilíbrio entre força e flexibilidade para um corpo funcional.",
             icon: <Dumbbell className="text-accent" size={32} />,
+            badge: "Essencial"
         },
         {
-            title: "Recuperação Funcional",
-            description: "Volte a realizar suas atividades do dia a dia com vigor e sem limitações físicas.",
+            title: "Quiropraxia",
+            description: "Alinhamento e mobilidade para sua coluna vertebral.",
             icon: <Zap className="text-accent" size={32} />,
+        },
+        {
+            title: "Ventosaterapia",
+            description: "Liberação tensional e detox para seus tecidos musculares.",
+            icon: <Activity className="text-accent" size={32} />,
+        },
+        {
+            title: "Escoliose",
+            description: "Cuidados específicos e protocolos de correção postural.",
+            icon: <ShieldCheck className="text-accent" size={32} />,
         },
     ];
 

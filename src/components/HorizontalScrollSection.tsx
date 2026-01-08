@@ -10,27 +10,33 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const cards = [
     {
         id: 1,
-        title: "Pilates Clínico",
-        description: "Reabilitação e fortalecimento.",
+        title: "Pilates",
+        description: "Fortalecimento consciente e reabilitação funcional.",
         image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1000&auto=format&fit=crop",
     },
     {
         id: 2,
-        title: "Fisioterapia Pélvica",
-        description: "Cuidado íntimo feminino.",
+        title: "Quiropraxia",
+        description: "Alinhamento vertebral e saúde do sistema nervoso.",
         image: "https://images.unsplash.com/photo-1579126038374-6064e9370f0f?q=80&w=1000&auto=format&fit=crop",
     },
     {
         id: 3,
-        title: "Tratamento de Dor",
-        description: "Alívio imediato e duradouro.",
+        title: "Ventosaterapia",
+        description: "Alívio de tensões musculares e melhora da circulação.",
         image: "https://images.unsplash.com/photo-1544367563-12123d815d19?q=80&w=1000&auto=format&fit=crop",
     },
     {
         id: 4,
-        title: "Gestantes",
-        description: "Preparação para o parto.",
-        image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1000&auto=format&fit=crop&q=60",
+        title: "Escoliose",
+        description: "Tratamento específico com foco em alinhamento.",
+        image: "https://images.unsplash.com/photo-1599058917233-358043bc15ee?q=80&w=1000&auto=format&fit=crop",
+    },
+    {
+        id: 5,
+        title: "Estética",
+        description: "Cuidados faciais e corporais para seu bem-estar.",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop",
     },
 ];
 
