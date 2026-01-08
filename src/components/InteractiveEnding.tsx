@@ -73,14 +73,17 @@ export default function InteractiveEnding() {
                 </h2>
             </div>
 
-            <Link href="/agendar" className="relative group cursor-none md:cursor-default">
+            <Link href="/agendar" className="relative group block">
                 <div
                     ref={circleRef}
-                    className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-primary flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-2xl overflow-hidden"
+                    className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-primary flex items-center justify-center shadow-2xl overflow-hidden isolation-isolate"
+                    style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }} // Fix for safari/chrome clipping bugs
                 >
-                    <div className="absolute inset-0 bg-accent translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
+                    <div
+                        className="absolute inset-0 bg-accent translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out will-change-transform z-0"
+                    />
 
-                    <div ref={textRef} className="relative z-10 text-white flex flex-col items-center gap-2">
+                    <div ref={textRef} className="relative z-10 text-white flex flex-col items-center gap-2 will-change-transform">
                         <span className="font-bold text-lg md:text-2xl uppercase tracking-widest">Agendar</span>
                         <ArrowUpRight size={32} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </div>
