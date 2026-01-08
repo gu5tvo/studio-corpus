@@ -35,7 +35,7 @@ const DAYS = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"];
 const TIMES = ["08:00", "09:00", "10:00", "18:00", "19:00", "20:00"];
 
 export default function HorariosPage() {
-    const [step, setStep] = useState(1);
+    const [step, setStep] = useState(0);
     const [plan, setPlan] = useState<2 | 3>(2);
     const [selectedDays, setSelectedDays] = useState<string[]>([]);
     const [selectedTimes, setSelectedTimes] = useState<Record<string, string>>({});
@@ -108,9 +108,10 @@ export default function HorariosPage() {
                         <header className="schedule-header text-center mb-16">
                             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-primary font-bold text-xs uppercase tracking-widest mb-6">
                                 <Calendar size={14} className="text-accent" />
-                                Passo {step} de 3
+                                {step === 0 ? "Informações Importantes" : `Passo ${step} de 3`}
                             </span>
                             <h1 className="text-5xl md:text-7xl font-bold text-primary tracking-tighter leading-[0.9]">
+                                {step === 0 && <>Como funciona <br /><span className="text-accent italic font-serif">Nossos Horários?</span></>}
                                 {step === 1 && <>Qual a sua <br /><span className="text-accent italic font-serif">Frequência?</span></>}
                                 {step === 2 && <>Escolha seus <br /><span className="text-accent italic font-serif">Dias.</span></>}
                                 {step === 3 && <>Defina seus <br /><span className="text-accent italic font-serif">Horários.</span></>}
@@ -119,6 +120,56 @@ export default function HorariosPage() {
 
                         {/* Wizard Container */}
                         <div ref={stepRef} className="min-h-[400px]">
+                            {/* STEP 0: Introduction */}
+                            {step === 0 && (
+                                <div className="space-y-12">
+                                    <div className="grid md:grid-cols-2 gap-8">
+                                        <div className="p-8 rounded-[2.5rem] bg-white border border-secondary shadow-sm">
+                                            <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
+                                                <Sun size={24} />
+                                            </div>
+                                            <h3 className="text-2xl font-bold text-primary mb-4">Metodologia Studio Corpus</h3>
+                                            <p className="text-muted leading-relaxed">
+                                                Trabalhamos com turmas reduzidas para garantir que cada aluno receba atenção total durante os exercícios de Pilates e sessões de Fisioterapia.
+                                            </p>
+                                        </div>
+                                        <div className="p-8 rounded-[2.5rem] bg-white border border-secondary shadow-sm">
+                                            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+                                                <Clock size={24} />
+                                            </div>
+                                            <h3 className="text-2xl font-bold text-primary mb-4">Blocos de Horário</h3>
+                                            <p className="text-muted leading-relaxed mb-4">
+                                                Nossas sessões ocorrem em dois grandes períodos do dia, facilitando sua rotina:
+                                            </p>
+                                            <ul className="space-y-2">
+                                                <li className="flex items-center gap-2 text-primary font-medium">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                                                    Manhã: 08h às 10h
+                                                </li>
+                                                <li className="flex items-center gap-2 text-primary font-medium">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                                                    Noite: 18h às 20h
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div className="p-10 rounded-[3rem] bg-secondary/5 border border-primary/5 flex flex-col md:flex-row items-center gap-8 justify-between">
+                                        <div className="max-w-md text-center md:text-left">
+                                            <h4 className="text-xl font-bold text-primary mb-2">Pronto para reservar sua turma?</h4>
+                                            <p className="text-muted">Abaixo você poderá simular sua agenda e nos enviar sua preferência via WhatsApp.</p>
+                                        </div>
+                                        <button
+                                            onClick={() => animateStepChange(1)}
+                                            className="px-12 py-6 bg-primary text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-xl shadow-primary/20 flex items-center gap-3 whitespace-nowrap"
+                                        >
+                                            Iniciar Agendamento
+                                            <ArrowRight size={20} />
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+
                             {/* STEP 1: Plan Selection */}
                             {step === 1 && (
                                 <div className="space-y-8 flex flex-col items-center">
