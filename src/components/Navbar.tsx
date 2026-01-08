@@ -18,6 +18,7 @@ export default function Navbar() {
     const navLinks = [
         { name: "Sobre", href: "/sobre" },
         { name: "Tratamentos", href: "/tratamentos" },
+        { name: "Horários", href: "/horarios" },
         { name: "Blog", href: "/blog" },
         { name: "Contato", href: "/contato" },
     ];
