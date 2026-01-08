@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Mail, Phone, MapPin, Instagram, Facebook, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook, Send, CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function ContatoPage() {
     const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success">("idle");
@@ -167,18 +167,48 @@ export default function ContatoPage() {
                 </div>
             </section>
 
-            {/* Google Maps Section */}
-            <section className="h-[500px] w-full relative">
+            {/* Google Maps Section with Floating Card */}
+            <section className="h-[600px] w-full relative overflow-hidden group">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991.6441053733!2d-47.4812330!3d-5.5262740!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92da03d98d895555%3A0xe48726593b482329!2sStudio%20Corpus%20Pilates!5e0!3m2!1spt-BR!2sbr!4v1704712345678!5m2!1spt-BR!2sbr"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.2882103733!2d-47.48473822502844!3d-5.5184481944615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92c55f86e7918dff%3A0x6c30834532e069f2!2sStudio%20Corpus%20Pilates!5e0!3m2!1spt-BR!2sbr!4v1704712345678!5m2!1spt-BR!2sbr"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen={true}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="grayscale contrast-125 brightness-110"
+                    className="grayscale contrast-125 brightness-110 opacity-60 group-hover:opacity-100 transition-opacity duration-1000 origin-center scale-105 group-hover:scale-100 ease-out"
                 />
+
+                {/* Visual Overlay */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white via-transparent to-transparent opacity-60" />
+
+                {/* Floating Map Card */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:left-24 md:translate-x-0 w-[90%] md:w-96 p-10 bg-white/90 backdrop-blur-xl border border-secondary/50 rounded-[3rem] shadow-2xl transition-all duration-500 hover:shadow-accent/10 hover:-translate-y-[52%]">
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 rounded-2xl bg-accent flex items-center justify-center text-white">
+                            <MapPin size={24} />
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-primary text-xl">Nossa Sede</h4>
+                            <p className="text-xs text-muted font-bold uppercase tracking-widest">Imperatriz - MA</p>
+                        </div>
+                    </div>
+
+                    <p className="text-primary font-medium mb-8 leading-relaxed">
+                        Rua Paraíba, 210 - Juçara<br />
+                        Próximo ao Hospital São Rafael
+                    </p>
+
+                    <a
+                        href="https://www.google.com/maps/dir//Studio+Corpus+Pilates+-+R.+Para%C3%ADba,+210+-+Ju%C3%A7ara,+Imperatriz+-+MA,+65900-240"
+                        target="_blank"
+                        className="flex items-center justify-center gap-3 w-full py-5 bg-primary text-white rounded-full font-bold hover:bg-accent transition-all group/btn shadow-xl shadow-primary/20"
+                    >
+                        Como Chegar
+                        <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                </div>
             </section>
 
             <Footer />
