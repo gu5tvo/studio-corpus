@@ -7,15 +7,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
 const images = [
-    "https://images.unsplash.com/photo-1544367563-12123d815d19?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1579126038374-6064e9370f0f?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1599058917233-358043bc15ee?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1000&auto=format&fit=crop&q=60",
-    "https://images.unsplash.com/photo-1544367563-12123d815d19?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
+    "/images/hero.png",
+    "https://images.unsplash.com/photo-1544367563-12123d815d19?auto=format&fit=crop&q=80&w=1000",
+    "/images/about.png",
+    "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=1000",
+    "/images/hero.png",
+    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000",
+    "/images/about.png",
+    "https://images.unsplash.com/photo-1579126038374-6064e9370f0f?auto=format&fit=crop&q=80&w=1000",
+    "https://images.unsplash.com/photo-1599058917233-358043bc15ee?auto=format&fit=crop&q=80&w=1000",
 ];
 
 export default function ScrollStorytelling() {
@@ -80,6 +80,7 @@ export default function ScrollStorytelling() {
                             alt={`Story image ${i}`}
                             fill
                             className="object-cover"
+                            unoptimized
                         />
                     </div>
                 ))}
