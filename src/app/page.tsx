@@ -12,18 +12,19 @@ import SmoothScroll from "@/components/SmoothScroll";
 export default function Home() {
   return (
     <main className="relative">
-      <SmoothScroll />
-      <div className="relative z-10">
-        <UnifiedHeroStory />
-        <HorizontalScrollSection />
-        <HighImpactQuote />
-        <StickyImageSection />
-        <LayeredParallax />
-        <Testimonials />
-        <FAQ />
-        <InteractiveEnding />
-        <Footer />
-      </div>
+      <SmoothScroll>
+        <div className="relative z-10">
+          <UnifiedHeroStory />
+          <HorizontalScrollSection />
+          <HighImpactQuote />
+          <StickyImageSection />
+          <LayeredParallax />
+          <Testimonials />
+          <FAQ />
+          <InteractiveEnding />
+          <Footer />
+        </div>
+      </SmoothScroll>
     </main>
   );
 }
