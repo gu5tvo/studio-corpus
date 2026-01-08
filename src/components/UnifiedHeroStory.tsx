@@ -9,18 +9,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const storyImages = [
-    "/images/hero.png",
-    "https://images.unsplash.com/photo-1544367563-12123d815d19?auto=format&fit=crop&q=80&w=1000",
-    "/images/about.png",
-    "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=1000",
-    "/images/hero.png",
-    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000",
-    "/images/about.png",
-    "https://images.unsplash.com/photo-1579126038374-6064e9370f0f?auto=format&fit=crop&q=80&w=1000",
-    "https://images.unsplash.com/photo-1599058917233-358043bc15ee?auto=format&fit=crop&q=80&w=1000",
-];
-
 export default function UnifiedHeroStory() {
     const mainRef = useRef<HTMLDivElement>(null);
     const heroRef = useRef<HTMLDivElement>(null);
@@ -42,14 +30,14 @@ export default function UnifiedHeroStory() {
             scrollTrigger: {
                 trigger: mainRef.current,
                 start: "top top",
-                end: "+=3000", // Unified scroll length
+                end: "+=2000", // Slightly shorter as we have less content here now
                 scrub: 1,
                 pin: true,
                 anticipatePin: 1,
             }
         });
 
-        // STEP A: Hero Exit Animation (starts immediately)
+        // STEP A: Hero Exit Animation
         masterTl.to(heroInnerRef.current, {
             scale: 0.8,
             opacity: 0,
@@ -65,36 +53,19 @@ export default function UnifiedHeroStory() {
             duration: 0.5
         }, 0);
 
-        // STEP B: Story Grid Scale & Stagger (Starts as Hero fades)
-        masterTl.fromTo(".story-grid-item", {
-            scale: 0.5,
+        // STEP B: Quote Reveal (Beneath Hero)
+        masterTl.fromTo(".quote-part", {
+            y: 100,
             opacity: 0,
+            scale: 0.9,
         }, {
-            scale: 1.2,
+            y: 0,
             opacity: 1,
-            duration: 2,
-            stagger: {
-                amount: 1,
-                from: "center",
-                grid: [3, 3],
-            },
-            ease: "power2.inOut"
-        }, 0.2); // Small overlap to prevent white gap
-
-        // STEP C: Background Dimming
-        masterTl.to(".story-overlay", {
-            backgroundColor: "rgba(0,0,0,0.5)",
-            duration: 1
-        }, 0.5);
-
-        // STEP D: Story Text Layers
-        masterTl.to(".story-text-layer", {
-            y: -100,
-            opacity: 1,
+            scale: 1,
             duration: 1.5,
-            stagger: 0.5,
+            stagger: 0.3,
             ease: "power4.out"
-        }, ">-0.5");
+        }, 0.2);
 
     }, { scope: mainRef });
 
@@ -102,10 +73,9 @@ export default function UnifiedHeroStory() {
         <div ref={mainRef} className="relative w-full overflow-hidden bg-white min-h-screen">
             <Navbar />
 
-            {/* SHARED CONTAINER FOR PINNING */}
             <div className="relative h-screen w-full">
 
-                {/* 1. HERO LAYER (On top initially) */}
+                {/* 1. HERO LAYER */}
                 <div
                     ref={heroRef}
                     className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none"
@@ -132,7 +102,6 @@ export default function UnifiedHeroStory() {
                             </video>
                         </div>
 
-                        {/* Lightening Overlay for Readability */}
                         <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px] z-[1]" />
 
                         <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center max-w-5xl mx-auto mt-10">
@@ -171,42 +140,29 @@ export default function UnifiedHeroStory() {
                     </div>
                 </div>
 
-                {/* 2. STORYTELLING LAYER (Revealed beneath) */}
+                {/* 2. QUOTE REVEAL LAYER (Revealed beneath) */}
                 <div
                     ref={storyRef}
-                    className="absolute inset-0 z-20 overflow-hidden bg-black"
+                    className="absolute inset-0 z-20 overflow-hidden bg-primary flex items-center justify-center"
                 >
-                    <div className="story-overlay absolute inset-0 z-10 pointer-events-none transition-colors duration-500" />
-
-                    {/* Image Grid */}
-                    <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-4 p-4 md:p-8 scale-150 rotate-12 opacity-40">
-                        {storyImages.map((src, i) => (
-                            <div key={i} className="story-grid-item relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-                                <Image
-                                    src={src}
-                                    alt={`Story image ${i}`}
-                                    fill
-                                    className="object-cover"
-                                    unoptimized
-                                />
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Content Layers */}
-                    <div className="relative z-20 h-full flex flex-col items-center justify-center px-6 text-center text-white pointer-events-none">
-                        <div className="story-text-layer opacity-0 translate-y-20 max-w-4xl">
-                            <span className="text-accent font-bold tracking-[0.3em] uppercase text-sm mb-6 block">A Jornada</span>
-                            <h2 className="text-5xl md:text-8xl font-bold leading-[0.9] tracking-tighter mb-8">
-                                Resgate a sua <br />
-                                <span className="text-white/40 italic font-serif">Essência.</span>
+                    <div className="relative z-20 max-w-7xl px-6 text-center">
+                        <div className="space-y-6 md:space-y-10">
+                            <h2 className="quote-part text-4xl md:text-8xl font-bold text-white leading-[0.9] tracking-tighter">
+                                “Pilates desenvolve um <br />
+                                <span className="text-accent italic font-serif">corpo uniforme</span>,”
+                            </h2>
+                            <h2 className="quote-part text-3xl md:text-6xl font-medium text-white/80 leading-tight tracking-tight">
+                                corrige posturas erradas, restaura a <br />
+                                vitalidade física, vigora a mente...
+                            </h2>
+                            <h2 className="quote-part text-4xl md:text-7xl font-bold text-white tracking-tighter">
+                                ...e eleva o <span className="text-accent">espírito.</span>”
                             </h2>
                         </div>
-
-                        <div className="story-text-layer opacity-0 translate-y-20 max-w-2xl">
-                            <p className="text-xl md:text-2xl font-light leading-relaxed text-white/80">
-                                Não é apenas sobre exercícios. É sobre reconectar cada fibra do seu ser com o potencial infinito de movimento que você possui.
-                            </p>
+                        <div className="quote-part mt-16">
+                            <span className="text-accent font-bold tracking-[0.4em] uppercase text-xs">
+                                — Joseph Pilates
+                            </span>
                         </div>
                     </div>
                 </div>
