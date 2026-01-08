@@ -114,7 +114,23 @@ export default function UnifiedHeroStory() {
                         ref={heroInnerRef}
                         className="relative w-full h-full bg-white shadow-2xl overflow-hidden origin-center pointer-events-auto"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-white to-secondary opacity-50" />
+                        {/* Background Video */}
+                        <div className="absolute inset-0 z-0">
+                            <video
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-full h-full object-cover opacity-60 scale-110"
+                            >
+                                <source
+                                    src="https://assets.mixkit.co/videos/preview/mixkit-woman-doing-yoga-on-a-yoga-mat-in-a-sunny-studio-41481-large.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        </div>
+
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-secondary/30 backdrop-blur-[2px] z-1" />
 
                         <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center max-w-5xl mx-auto mt-10">
                             <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-white/80 backdrop-blur-md text-primary font-bold text-xs uppercase tracking-widest mb-8 shadow-sm">
