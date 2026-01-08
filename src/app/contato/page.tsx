@@ -56,13 +56,13 @@ export default function ContatoPage() {
                                     </div>
                                 </a>
 
-                                <a href="mailto:contato@studiocorpus.com" className="flex items-center gap-6 group">
+                                <a href="mailto:studiocorpus@email.com" className="flex items-center gap-6 group">
                                     <div className="w-16 h-16 rounded-full bg-secondary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                                         <Mail size={24} />
                                     </div>
                                     <div>
                                         <p className="text-sm text-muted font-bold uppercase tracking-widest mb-1">E-mail</p>
-                                        <p className="text-xl font-bold text-primary">contato@studiocorpus.com</p>
+                                        <p className="text-xl font-bold text-primary">studiocorpus@email.com</p>
                                     </div>
                                 </a>
 
@@ -72,7 +72,7 @@ export default function ContatoPage() {
                                     </div>
                                     <div>
                                         <p className="text-sm text-muted font-bold uppercase tracking-widest mb-1">Localização</p>
-                                        <p className="text-xl font-bold text-primary">Av. Principal, 123 - Centro<br />São Luís, MA</p>
+                                        <p className="text-xl font-bold text-primary">R. Paraíba, 210 - Juçara<br />Imperatriz - MA</p>
                                     </div>
                                 </div>
                             </div>
@@ -167,11 +167,18 @@ export default function ContatoPage() {
                 </div>
             </section>
 
-            {/* Map Placeholder */}
-            <section className="h-[400px] w-full bg-secondary/40 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-muted font-medium uppercase tracking-[0.3em]">Mapa Interativo Disponível em Breve</p>
-                </div>
+            {/* Google Maps Section */}
+            <section className="h-[500px] w-full relative">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1991.6441053733!2d-47.4812330!3d-5.5262740!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92da03d98d895555%3A0xe48726593b482329!2sStudio%20Corpus%20Pilates!5e0!3m2!1spt-BR!2sbr!4v1704712345678!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="grayscale contrast-125 brightness-110"
+                />
             </section>
 
             <Footer />
