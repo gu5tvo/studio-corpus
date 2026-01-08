@@ -107,7 +107,7 @@ export default function HorariosPage() {
                                                         <div className="flex flex-col">
                                                             <span className="text-4xl font-bold text-primary tracking-tighter group-hover:text-accent transition-colors">
                                                                 {slot.time}
-                                                            </h2>
+                                                            </span>
                                                             <span className="text-xs font-bold text-accent uppercase tracking-[0.2em] mt-1">Horas</span>
                                                         </div>
                                                         <div className="h-10 w-[1px] bg-primary/10" />
