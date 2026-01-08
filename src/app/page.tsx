@@ -1,5 +1,4 @@
-import Hero from "@/components/Hero";
-import ScrollStorytelling from "@/components/ScrollStorytelling";
+import UnifiedHeroStory from "@/components/UnifiedHeroStory";
 import CinematicReveal from "@/components/CinematicReveal";
 import HorizontalScrollSection from "@/components/HorizontalScrollSection";
 import StickyImageSection from "@/components/StickyImageSection";
@@ -11,8 +10,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      <Hero />
-      <ScrollStorytelling />
+      <UnifiedHeroStory />
       <CinematicReveal />
       <HorizontalScrollSection />
       <StickyImageSection />
