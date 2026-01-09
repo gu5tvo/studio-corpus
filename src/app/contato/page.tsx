@@ -8,14 +8,41 @@ import { Mail, Phone, MapPin, Instagram, Facebook, Send, CheckCircle2, ArrowRigh
 
 export default function ContatoPage() {
     const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success">("idle");
+    const [formData, setFormData] = useState({
+        nome: "",
+        email: "",
+        whatsapp: "",
+        mensagem: ""
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setFormStatus("loading");
-        // Simulate API call
+
+        const text = `Olá! Meu nome é ${formData.nome}.
+        
+*E-mail:* ${formData.email}
+*WhatsApp:* ${formData.whatsapp}
+
+*Mensagem:* 
+${formData.mensagem}
+
+---
+_Enviado através do formulário de contato do site Studio Corpus._`;
+
+        const whatsappUrl = `https://wa.me/5599991412100?text=${encodeURIComponent(text)}`;
+
+        // Simulate a slight delay for better UX before redirecting
         setTimeout(() => {
+            window.open(whatsappUrl, "_blank");
             setFormStatus("success");
-        }, 1500);
+            setFormData({ nome: "", email: "", whatsapp: "", mensagem: "" });
+        }, 800);
     };
 
     return (
@@ -115,6 +142,9 @@ export default function ContatoPage() {
                                         <input
                                             required
                                             type="text"
+                                            name="nome"
+                                            value={formData.nome}
+                                            onChange={handleChange}
                                             className="w-full px-8 py-5 rounded-full bg-white border border-transparent focus:border-accent focus:outline-none transition-all placeholder:text-muted/50"
                                             placeholder="Como podemos te chamar?"
                                         />
@@ -126,6 +156,9 @@ export default function ContatoPage() {
                                             <input
                                                 required
                                                 type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
                                                 className="w-full px-8 py-5 rounded-full bg-white border border-transparent focus:border-accent focus:outline-none transition-all placeholder:text-muted/50"
                                                 placeholder="seu@email.com"
                                             />
@@ -135,6 +168,9 @@ export default function ContatoPage() {
                                             <input
                                                 required
                                                 type="tel"
+                                                name="whatsapp"
+                                                value={formData.whatsapp}
+                                                onChange={handleChange}
                                                 className="w-full px-8 py-5 rounded-full bg-white border border-transparent focus:border-accent focus:outline-none transition-all placeholder:text-muted/50"
                                                 placeholder="(99) 00000-0000"
                                             />
@@ -145,6 +181,9 @@ export default function ContatoPage() {
                                         <label className="text-sm font-bold text-primary uppercase tracking-widest ml-4">Como podemos ajudar?</label>
                                         <textarea
                                             required
+                                            name="mensagem"
+                                            value={formData.mensagem}
+                                            onChange={handleChange}
                                             rows={4}
                                             className="w-full px-8 py-6 rounded-[2rem] bg-white border border-transparent focus:border-accent focus:outline-none transition-all placeholder:text-muted/50 resize-none"
                                             placeholder="Conte-nos um pouco sobre seu objetivo ou dúvida..."
