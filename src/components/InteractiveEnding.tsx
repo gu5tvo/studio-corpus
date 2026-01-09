@@ -73,7 +73,11 @@ export default function InteractiveEnding() {
                 </h2>
             </div>
 
-            <Link href="/agendar" className="relative group block">
+            <Link
+                href="https://wa.me/5599991412100?text=Olá!%20Vi%20o%20site%20do%20Studio%20Corpus%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos."
+                target="_blank"
+                className="relative group block"
+            >
                 <div
                     ref={circleRef}
                     className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-primary flex items-center justify-center shadow-2xl overflow-hidden isolation-isolate"

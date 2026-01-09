@@ -126,7 +126,11 @@ export default function UnifiedHeroStory() {
                             </p>
 
                             <div className="hero-cta">
-                                <Link href="/agendar" className="group relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold text-lg overflow-hidden transition-all hover:pr-10">
+                                <Link
+                                    href="https://wa.me/5599991412100?text=Olá!%20Vi%20o%20site%20do%20Studio%20Corpus%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos."
+                                    target="_blank"
+                                    className="group relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold text-lg overflow-hidden transition-all hover:pr-10"
+                                >
                                     <span className="relative z-10">Começar transformação</span>
                                     <div className="absolute inset-0 bg-accent translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
                                     <ArrowDown size={20} className="relative z-10 transition-transform group-hover:translate-y-1" />

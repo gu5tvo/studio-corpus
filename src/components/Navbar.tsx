@@ -61,7 +61,7 @@ export default function Navbar() {
                     {/* CTA Button */}
                     <div className="hidden md:flex items-center gap-4">
                         <Link
-                            href="https://wa.me/5599991412100"
+                            href="https://wa.me/5599991412100?text=Olá!%20Vi%20o%20site%20do%20Studio%20Corpus%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos."
                             target="_blank"
                             className="bg-accent text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 hover:-translate-y-0.5"
                         >
@@ -95,7 +95,8 @@ export default function Navbar() {
                         ))}
                         <div className="h-px bg-secondary my-2" />
                         <Link
-                            href="/agendar"
+                            href="https://wa.me/5599991412100?text=Olá!%20Vi%20o%20site%20do%20Studio%20Corpus%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos."
+                            target="_blank"
                             className="bg-accent text-white px-4 py-3 rounded-xl font-bold text-center"
                             onClick={() => setMobileOpen(false)}
                         >
