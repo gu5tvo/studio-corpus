@@ -9,7 +9,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Studio Corpus | Fisioterapia e Pilates",
-  description: "Especialista em alívio de dor e qualidade de vida para mulheres 40+. Fisioterapia e Pilates em Imperatriz - MA.",
+  description: "Especialista em alívio de dor e qualidade de vida para pessoas 40+. Fisioterapia e Pilates em Imperatriz - MA.",
 };
 
 import SmoothScroll from "@/components/SmoothScroll";

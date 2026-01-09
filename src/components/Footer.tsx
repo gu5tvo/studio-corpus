@@ -18,7 +18,7 @@ export default function Footer() {
                             />
                         </Link>
                         <p className="text-muted text-lg max-w-sm mb-6">
-                            Referência em atendimento humanizado para mulheres que buscam qualidade de vida através da Fisioterapia e do Pilates.
+                            Referência em atendimento humanizado para pessoas que buscam qualidade de vida através da Fisioterapia e do Pilates.
                         </p>
                         <div className="flex gap-4">
                             <Link href="#" className="w-10 h-10 rounded-full border border-secondary flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm">

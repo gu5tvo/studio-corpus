@@ -10,7 +10,7 @@ export default function About() {
                 <div className="max-w-3xl mb-16">
                     <h2 className="text-sm font-bold text-accent uppercase tracking-widest mb-4">Sobre a Fisioterapeuta</h2>
                     <h3 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
-                        Uma abordagem dedicada ao cuidado feminino.
+                        Uma abordagem dedicada ao seu cuidado integral.
                     </h3>
                 </div>
 
@@ -22,7 +22,7 @@ export default function About() {
                         transition={{ duration: 0.6 }}
                     >
                         <p className="text-xl text-muted leading-relaxed mb-6">
-                            No Studio Corpus, acreditamos que a dor não deve ser uma companheira constante. Minha missão é ajudar mulheres a redescobrirem a força de seus corpos, especialmente após os 40 anos.
+                            No Studio Corpus, acreditamos que a dor não deve ser uma companheira constante. Minha missão é ajudar você a redescobrir a força do seu corpo, especialmente após os 40 anos.
                         </p>
                         <p className="text-lg text-muted/80 leading-relaxed mb-8">
                             Unindo a ciência da fisioterapia com a precisão do pilates, desenvolvi um método que foca não apenas no sintoma, mas na causa da dor lombar e nos desequilíbrios posturais. Aqui, cada atendimento é único, humanizado e focado nos seus objetivos de vida.

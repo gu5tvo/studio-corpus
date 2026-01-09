@@ -130,7 +130,7 @@ export default function HorariosPage() {
                                             </div>
                                             <h3 className="text-2xl font-bold text-primary mb-4">Metodologia Studio Corpus</h3>
                                             <p className="text-muted leading-relaxed">
-                                                Trabalhamos com turmas reduzidas para garantir que cada aluno receba atenção total durante os exercícios de Pilates e sessões de Fisioterapia.
+                                                Trabalhamos com turmas reduzidas para garantir que cada pessoa receba atenção total durante os exercícios de Pilates e sessões de Fisioterapia.
                                             </p>
                                         </div>
                                         <div className="p-8 rounded-[2.5rem] bg-white border border-secondary shadow-sm">
@@ -156,7 +156,7 @@ export default function HorariosPage() {
 
                                     <div className="p-10 rounded-[3rem] bg-secondary/5 border border-primary/5 flex flex-col md:flex-row items-center gap-8 justify-between">
                                         <div className="max-w-md text-center md:text-left">
-                                            <h4 className="text-xl font-bold text-primary mb-2">Pronto para reservar sua turma?</h4>
+                                            <h4 className="text-xl font-bold text-primary mb-2">Tudo pronto para reservar sua turma?</h4>
                                             <p className="text-muted">Abaixo você poderá simular sua agenda e nos enviar sua preferência via WhatsApp.</p>
                                         </div>
                                         <button

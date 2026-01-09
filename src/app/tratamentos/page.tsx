@@ -103,7 +103,7 @@ export default function TratamentosPage() {
             {/* Final CTA */}
             <section className="py-32 px-6 bg-primary text-white text-center">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">Pronto para sua melhor versão?</h2>
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">Tudo pronto para sua melhor versão?</h2>
                     <p className="text-xl text-white/60 mb-12 leading-relaxed">
                         Agende sua avaliação agora e descubra o plano de tratamento ideal para seus objetivos.
                     </p>

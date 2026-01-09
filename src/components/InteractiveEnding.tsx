@@ -66,7 +66,7 @@ export default function InteractiveEnding() {
     return (
         <section ref={containerRef} className="py-40 bg-white flex flex-col items-center justify-center overflow-hidden">
             <div className="text-center mb-20 px-6">
-                <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm mb-6 block">Pronta para começar?</span>
+                <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm mb-6 block">Tudo pronto para começar?</span>
                 <h2 className="text-5xl md:text-9xl font-bold text-primary leading-[0.8] tracking-tighter">
                     Sua melhor <br />
                     versão é <span className="italic font-serif text-primary/30">agora.</span>

@@ -73,7 +73,7 @@ export default function Testimonials() {
                             </div>
                             <div>
                                 <p className="font-bold text-primary">Maria Helena</p>
-                                <p className="text-sm text-muted">Aluna há 2 anos</p>
+                                <p className="text-sm text-muted">Cliente há 2 anos</p>
                             </div>
                         </div>
                     </div>
