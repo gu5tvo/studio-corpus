@@ -56,13 +56,13 @@ export default function ContatoPage() {
                                     </div>
                                 </a>
 
-                                <a href="mailto:studiocorpus@email.com" className="flex items-center gap-6 group">
+                                <a href="mailto:studiocorpusitz@gmail.com" className="flex items-center gap-6 group">
                                     <div className="w-16 h-16 rounded-full bg-secondary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                                         <Mail size={24} />
                                     </div>
                                     <div>
                                         <p className="text-sm text-muted font-bold uppercase tracking-widest mb-1">E-mail</p>
-                                        <p className="text-xl font-bold text-primary">studiocorpus@email.com</p>
+                                        <p className="text-xl font-bold text-primary">studiocorpusitz@gmail.com</p>
                                     </div>
                                 </a>
 
@@ -80,12 +80,13 @@ export default function ContatoPage() {
                             <div>
                                 <h3 className="text-sm text-muted font-bold uppercase tracking-widest mb-6">Siga-nos</h3>
                                 <div className="flex gap-4">
-                                    <a href="#" className="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                    <Link
+                                        href="https://www.instagram.com/studiocorpusimp/"
+                                        target="_blank"
+                                        className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all group-hover:border-primary"
+                                    >
                                         <Instagram size={20} />
-                                    </a>
-                                    <a href="#" className="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-                                        <Facebook size={20} />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

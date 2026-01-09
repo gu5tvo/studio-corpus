@@ -21,7 +21,11 @@ export default function Footer() {
                             Referência em atendimento humanizado para pessoas que buscam qualidade de vida através da Fisioterapia e do Pilates.
                         </p>
                         <div className="flex gap-4">
-                            <Link href="#" className="w-10 h-10 rounded-full border border-secondary flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+                            <Link
+                                href="https://www.instagram.com/studiocorpusimp/"
+                                target="_blank"
+                                className="w-10 h-10 rounded-full border border-secondary flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm"
+                            >
                                 <Instagram size={20} />
                             </Link>
                         </div>
@@ -51,7 +55,7 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3 text-muted">
                                 <Mail size={18} className="text-accent" />
-                                studiocorpus@email.com
+                                studiocorpusitz@gmail.com
                             </li>
                         </ul>
                     </div>
